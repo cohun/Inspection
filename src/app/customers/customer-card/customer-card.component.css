@@ -1,0 +1,10 @@
+mat-card {
+  width: 360px;
+  margin: auto;
+}
+.mat-card-actions {
+  display: flex;
+}
+.mat-card-actions .spacer {
+  width: 100%;
+}

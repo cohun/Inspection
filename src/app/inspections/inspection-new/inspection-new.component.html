@@ -1,0 +1,39 @@
+<section >
+  <mat-card class="new-inspection">
+    <mat-card-title> Új vizsgálat: </mat-card-title>
+
+    <form #newForm="ngForm" (ngSubmit)="onSubmit()" novalidate >
+      <pre>{{ newForm.value | json }}</pre>
+      <hr>
+      <pre>{{ newInspection | json }}</pre>
+      <mat-card-content fxLayout.xs="column" fxLayout="row wrap" fxLayoutAlign="center">
+        <mat-form-field class="customer" fxFlex.xs fxFlex="350px" appearance="outline">
+          <input name="id" matInput placeholder="Sorszám" [(ngModel)]="newInspection.id">
+          <mat-hint align="end">A vizsgálat egyedi jelölése</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="customer" fxFlex.xs fxFlex="350px"  appearance="fill">
+          <input name="name" matInput placeholder="Ügyfél" [(ngModel)]="newInspection.name">
+        </mat-form-field>
+        <mat-form-field fxFlex.xs fxFlex="350px">
+          <input name="date" matInput [matDatepicker]="picker" placeholder="Vizsgálat dátuma" [(ngModel)]="newInspection.date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field fxFlex.xs fxFlex="350px">
+          <input name="valid" matInput [matDatepicker]="picker2" placeholder="Érvényesség vége" [(ngModel)]="newInspection.valid">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button>Rögzítés</button>
+        <button mat-button>Töröl</button>
+      </mat-card-actions>
+    </form>
+
+  </mat-card>
+</section>
+
+
+

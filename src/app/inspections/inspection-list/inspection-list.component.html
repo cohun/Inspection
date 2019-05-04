@@ -1,0 +1,13 @@
+<mat-tab-group>
+  <mat-tab label="Lista">
+    <button class="btn" color="primary" mat-raised-button routerLink="/vizsgalatok/ujvizsg">Új</button>
+    <app-inspection-past></app-inspection-past>
+  </mat-tab>
+
+  <mat-tab label="Jegyzőkönyvek">
+    <ng-template matTabContent>
+      <p>elkészült jegyzőkönyvek</p>
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>
+
